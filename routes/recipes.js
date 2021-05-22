@@ -1,35 +1,44 @@
+const { map } = require('../app');
 var recipes = require('../recipes.json');
 var router = require('express').Router();
 
+const generateRecipesMapper = ()=>{
+  const map = new Map();
+  for(const recipe of recipes){
+    map.set(recipe.id,recipe);
+  }
+  return map;
+}
+
 const Recipes = {
-	getById: recipeId => {
-	    let { ids } = recipeId;
-	    const recipeList = recipes.filter(recipe => recipe.id == ids)
-	    return recipeList[0].ingredients;
-  	}
+	getById: ids => {
+      const recipesAsPerId = generateRecipesMapper()
+	    const selectedRecipes = [];
+      for(const id of ids){
+        if(recipesAsPerId.has(parseInt(id))){
+          selectedRecipes.push(recipesAsPerId.get(parseInt(id)));
+        }
+      }
+      return selectedRecipes;
+  	},
+  getIngredientsFromRecipes: (selectedRecipes)=>{
+    return selectedRecipes.map(x=>x.ingredients).flat();
+  }
 }
 
 router.get('/shopping-list', (req, res) => {
-    const arr = []
-    const recipeId = recipes.forEach(recipe => {
-      if (recipe.id == req.query.ids) {
-        arr.push(recipe.id);
-      }
-    });
-
-    if (arr[0] == req.query.ids) {
-      if (req.query.ids) {
-        return res.json(Recipes.getById(req.query));
-      }
-      else {
-        res.status(400).end();
-      } 
-    }
-    else {
-      res.status(404).json({
-          errorMessage: 'NOT_FOUND'
-      });
-    }
+  const {query:{ids=null}} = req;
+  if(!ids){
+    return res.status(400).end();
+  }
+  const selectedRecipes = Recipes.getById(ids.split(','));
+  if(selectedRecipes.length>0){
+    return res.json(Recipes.getIngredientsFromRecipes(selectedRecipes));
+  }
+  else{
+    return res.status(404).send(
+      'NOT_FOUND');
+  }
 });
 
 module.exports = router;
