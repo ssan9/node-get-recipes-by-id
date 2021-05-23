@@ -22,7 +22,11 @@ const Recipes = {
       return selectedRecipes;
   	},
   getIngredientsFromRecipes: (selectedRecipes)=>{
-    return selectedRecipes.map(x=>x.ingredients).flat();
+    const ingredients = [];
+    for(const recipe of selectedRecipes){
+      ingredients.push(...recipe.ingredients)
+    }
+    return ingredients;
   }
 }
 
