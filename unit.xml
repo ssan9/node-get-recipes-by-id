@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.0350" tests="4" failures="3">
+  <testsuite name="Root Suite" timestamp="2021-05-23T22:56:46" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="express_recipes_filters" timestamp="2021-05-23T22:56:46" tests="4" file="C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js" time="6.0350" failures="3">
+    <testcase name="express_recipes_filters Should return 400 for /recipes/shopping-list if no ids are passed in query" time="0.0350" classname="Should return 400 for /recipes/shopping-list if no ids are passed in query">
+    </testcase>
+    <testcase name="express_recipes_filters Should respond back with a 404 if none of the ids match" time="2.0000" classname="Should respond back with a 404 if none of the ids match">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)]]></failure>
+    </testcase>
+    <testcase name="express_recipes_filters Should respond with the shopping list if the ids are valid and match is found" time="2.0000" classname="Should respond with the shopping list if the ids are valid and match is found">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)]]></failure>
+    </testcase>
+    <testcase name="express_recipes_filters Should respond with the correct shopping if the query sent is mixed" time="2.0000" classname="Should respond with the correct shopping if the query sent is mixed">
+      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Swati\Desktop\New folder\hackerrank-practice\node-get-recipes-by-id\b1e45f60-81ba-4d15-8a2a-7305ddced436\test\index.spec.js)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
